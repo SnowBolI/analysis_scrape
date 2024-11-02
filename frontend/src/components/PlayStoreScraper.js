@@ -49,8 +49,8 @@ const PlayStoreScraper = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <div className="mb-6 bg-black p-4 rounded-lg shadow">
-        <h1 className="text-2xl font-bold mb-4">Google Play Store Scraper</h1>
+      <div className="mb-6 bg-white p-4 rounded-lg shadow">
+        <h1 className="text-2xl font-bold mb-4 text-black ">Google Play Store Scraper</h1>
         <div className="relative">
           <div className="flex items-center border rounded overflow-hidden">
             <Search className="w-5 h-5 ml-3 text-gray-400" />
@@ -59,7 +59,7 @@ const PlayStoreScraper = () => {
               placeholder="Ketik untuk mencari aplikasi..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className=" text-white flex-1 p-3 pl-2 outline-none bg-black"
+              className=" text-black flex-1 p-3 pl-2 outline-none bg-white"
             />
             {loading && (
               <div className="mr-3 text-sm text-gray-500">
@@ -75,7 +75,7 @@ const PlayStoreScraper = () => {
           {apps.map((app) => (
             <div 
               key={app.appId || Math.random()} 
-              className="bg-black p-4 rounded-lg shadow hover:shadow-md transition-shadow duration-200"
+              className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow duration-200"
             >
               <div className="flex gap-4">
                 {app.icon && (
@@ -86,10 +86,10 @@ const PlayStoreScraper = () => {
                   />
                 )}
                 <div className="flex-1">
-                  <h2 className="text-lg font-semibold">{app.title || 'Unnamed App'}</h2>
+                  <h2 className="text-lg font-semibold text-black">{app.title || 'Unnamed App'}</h2>
                   <p className="text-sm text-gray-500">{app.developer || 'Unknown Developer'}</p>
                   <div className="flex items-center mt-1">
-                    <span className="text-sm font-medium">
+                    <span className="text-sm font-medium text-black">
                       {typeof app.score === 'number' ? app.score.toFixed(1) : 'N/A'}
                     </span>
                     <span className="text-yellow-400 ml-1">⭐</span>
